@@ -97,21 +97,24 @@
 //   ]
 // */
 
-const obtenerNumeroAlAzar = (array) => {
-    return Math.floor((Math.random() * array.length))
+const obtenerNumeroAlAzar = (items) => {
+    return Math.floor((Math.random() * items.length))
 }
-
 
 //   console.log(devolverEnArray(6))
 
-const crearArrayAlAzar = (array) => {
-    const array2 = []
+const generarGrilla = (filas, columnas, items) => {
 
-    for (let i = 0; i < array; i++) {
-        array2[array[obtenerNumeroAlAzar(array)]]
+    let grilla = []
+    for (let i =0; i < filas; i++) {
+        grilla[i] = []
+        for (let j = 0; j < columnas; j++) {
+            grilla[i][j] = items[obtenerNumeroAlAzar(items)]
+
+        }
 
     }
-    return array2
+    return grilla
 }
 
-console.log(crearArrayAlAzar(["a", "b", "c"]))
+console.log(generarGrilla(2,3,["a", "b", "c"]))
